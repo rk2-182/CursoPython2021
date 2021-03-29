@@ -1,0 +1,28 @@
+{% extends 'layout.html'%}
+
+
+{% block content%}
+
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<!--  <form class="formulario" method="POST" action="{{ url_for('editar',id=id)}}>-->
+<form class="formulario" method="POST" action="/modificar_salida/{{contact.0}}">
+    <div class="mb-3 px-5">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="entrada1" name="nombre" required value="{{ contact.1}}">
+    </div>
+    <div class="mb-3 px-5">
+        <label for="entrada" class="form-label">Salida</label>
+        <input type="time" class="form-control" id="entrada1" name="salida" required value="{{contact.4}}">
+    </div>
+    <div class="px-5">
+        <button type="submit" class="btn btn-primary boton" name="entrada">Entrada</button>
+    </div>
+</form>
+{% endblock%}

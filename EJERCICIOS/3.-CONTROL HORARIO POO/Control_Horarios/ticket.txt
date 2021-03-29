@@ -1,0 +1,6 @@
+	Ticket
+Mes:......Marzo
+Fecha:....viernes 05
+Entrada:..8.34
+Salida:...19.55
+---------------------

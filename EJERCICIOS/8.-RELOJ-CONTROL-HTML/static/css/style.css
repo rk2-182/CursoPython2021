@@ -1,0 +1,34 @@
+
+.cuerpo{
+    background: #F2F0F0;
+}
+
+
+.fondo{
+    background-color: #FFFFFF;
+}
+
+#entradaNombre{
+    width: min-content;
+  
+}
+
+.formulario{
+    border: 1px solid #ccc;
+}
+
+
+.boton{
+    margin-bottom: 5px;
+    width: 20%;
+}
+
+#entrada1{
+    width: 20%;
+}
+
+#entrada2{
+    width: 20%;
+}
+
+

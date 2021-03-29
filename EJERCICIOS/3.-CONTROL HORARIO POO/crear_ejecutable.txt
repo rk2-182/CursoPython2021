@@ -1,0 +1,9 @@
+pyinstaller --clean --onefile --windowed "nombrearchivo.py"
+
+#crear un solo archivo
+pyinstaller -onefile "nombreArchivo.py"
+
+#crear un solo archivo mas un icono
+pyinstaller --onefile --ico=./python.ico main.py
+
+https://www.youtube.com/watch?v=Vr9vl0qlggE&list=PLU8oAlHdN5BlvPxziopYZRd55pdqFwkeS&index=80

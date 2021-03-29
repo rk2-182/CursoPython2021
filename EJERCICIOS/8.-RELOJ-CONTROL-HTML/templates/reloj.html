@@ -1,0 +1,66 @@
+{% extends 'layout.html'%}
+
+{%block content%}
+<form class="formulario" method="POST" action="{{ url_for('entrada')}}">
+    <div class="mb-3 px-5">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="entrada1" name="nombre" required placeholder="Nombre funcionario">
+    </div>
+    <div class="px-5">
+        <button type="submit" class="btn btn-success boton" name="entrada">Entrada</button>
+    </div>
+
+</form>
+<div>
+    <br>
+</div>
+<form class="formulario" method="POST" action="{{ url_for('salida')}}">
+    <div class="mb-3 px-5">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="entrada2" name="nombre" required placeholder="Nombre funcionario">
+    </div>
+    <div class="px-5">
+        <button type="submit" class="btn btn-warning boton" name="salida">Salida</button>
+    </div>
+
+</form>
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<br>
+<hr>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Fecha</td>
+            <td>Entrada</td>
+            <td>Salida</td>
+            <td>Operaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in contacts%}
+        <tr>
+            <td>{{ contact.0}}</td>
+            <td>{{ contact.1}}</td>
+            <td>{{ contact.2}}</td>
+            <td>{{ contact.3}}</td>
+            <td>{{ contact.4}}</td>
+            <td>
+                <a href="/editar_entrada/{{contact.0}}" class="btn btn-success">Editar entrada</a>
+                <a href="/editar_salida/{{contact.0}}" class="btn btn-primary">Editar salida</a>
+                <a href="/eliminar/{{contact.0}}" class="btn btn-warning btn-eliminar">Eliminar</a>
+            </td>
+        </tr>
+
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock%}
